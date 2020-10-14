@@ -9,7 +9,9 @@ This test takes approximately 20 minutes to complete; progress and success are m
 
 Prerequisites:
 * AWS CLI installed on your local machine
-* A CLI named profile giving access to the account with the Nextflow stack.  If only one profile is defined, and is not named, use `default`.
+* A CLI named profile giving access to the account with the Nextflow stack.  If only one profile is defined, and is not named, use `default`
+* A functional [Nextflow All-In-One](https://github.com/aws-samples/aws-genomics-workflows/blob/master/src/templates/nextflow/nextflow-aio.template.yaml) stack installed in your AWS account
+* The Batch high priority queue in this deployment including the string 'highpriority' (included by default) in its name
 
 Usage:
 * `nextflow-minimal-test.sh <profile> <queue_name> <job_definition>` submits a test job to Batch, using the given named profile in the AWS CLI.  The queue and job names can come from the Batch console, or by running this script with just the profile name, as shown below.
