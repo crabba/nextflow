@@ -1,4 +1,12 @@
-# nextflow-test
+# Nextflow
+
+This repository contains documentation and test scripts for the [Nextflow on AWS Batch](https://docs.opendata.aws/genomics-workflows/orchestration/nextflow/nextflow-overview/) solution.
+
+## Nextflow on AWS Batch User Guide
+
+An introductory guide for new users to a pre-installed Nextflow on AWS Batch solution.
+
+## nextflow-test
 Test scripts for Nextflow on AWS
 
 ## nextflow-minimal-test.sh
