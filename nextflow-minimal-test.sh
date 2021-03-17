@@ -1,6 +1,6 @@
 #! /bin/bash
 
-HIGH_PRIORITY_QUEUE_NAME='highpriority'
+HIGH_PRIORITY_QUEUE_NAME='priority'
 COMMAND='wleepang/demo-genomics-workflow-nextflow'
 
 usage() {
@@ -9,7 +9,7 @@ usage() {
 }
 
 display_high_priority_queues() {
-    echo "----  High priority queue names matching '${HIGH_PRIORITY_QUEUE_NAME}' for profile ${1}:  ----"
+    echo "----  Priority queue names matching '${HIGH_PRIORITY_QUEUE_NAME}' for profile ${1}:  ----"
     aws --profile $1 batch describe-job-queues | grep jobQueueName | grep $HIGH_PRIORITY_QUEUE_NAME | awk -F \" '{print $4}'
     echo "--------------------------------------------------------------"    
 }
