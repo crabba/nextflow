@@ -16,7 +16,7 @@ display_high_priority_queues() {
 
 display_job_definitions() {
     echo "----  Active job definition names for profile ${1}:  ----"
-    aws --profile $1 batch describe-job-definitions  --status ACTIVE | grep jobDefinitionName | grep -i nextflow  | awk -F \" '{print $4}'
+    aws --profile $1 batch describe-job-definitions --status ACTIVE | grep jobDefinitionName | grep -i nextflow  | awk -F \" '{print $4}'
     echo "--------------------------------------------------------------"    
 }
 
@@ -31,7 +31,7 @@ check_high_priority_queue() {
 }
 
 check_job_definition() {
-    num_job_definitions=`aws --profile $1 batch describe-job-definitions --job-definition-name $2 | grep jobDefinitionArn | wc -l`
+    num_job_definitions=`aws --profile $1 batch describe-job-definitions --status ACTIVE --job-definition-name $2 | grep jobDefinitionArn | wc -l`
     if [[ num_job_definitions -ne 1 ]]
     then
         echo "ERROR: No single job definition named ${2} for profile ${1}"
